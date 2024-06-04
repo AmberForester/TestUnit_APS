@@ -3,6 +3,7 @@ public class Item {
     private String idItem;
     private Produk produk;
     private int quantity;
+    private float subTotal;
 
     public Item(Produk produk, int quantity){
         this.produk = produk;
@@ -21,7 +22,8 @@ public class Item {
         return quantity;
     }
 
-    public double hitungSubTotal(){
-        return produk.getHarga() * quantity;
+    public float getSubTotal(){
+        subTotal = produk.getHarga() * quantity;
+        return subTotal;
     }
 }

@@ -2,9 +2,9 @@ package TestUnit_APS;
 public class Produk{
     private int idProduk;
     private String namaProduk;
-    private double harga;
+    private float harga;
 
-    public Produk(int id, String nama, double harga){
+    public Produk(int id, String nama, float harga){
         this.idProduk = id;
         this.namaProduk = nama;
         this.harga = harga;
@@ -18,7 +18,7 @@ public class Produk{
         return namaProduk;
     }
     
-    public double getHarga() {
+    public float getHarga() {
         return harga;
     }
 }

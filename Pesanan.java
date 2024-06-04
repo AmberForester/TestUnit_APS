@@ -4,36 +4,50 @@ import java.util.*;
 public class Pesanan {
     private List<Item> daftarItem = new ArrayList<>();
     private List<Toko> daftarToko =  new ArrayList<>();
-    private Toko tokoaja;
+    private Toko selected = new Toko(0, null, null);
     private String statusPesanan;
-    private double totalHarga;
+    private float totalHarga;
 
-    public void CetakDaftarToko(){
-        for (Toko toko : daftarToko) {
-            System.out.printf("%s: %f",toko.getNamaToko());
-        }
-    }
-
-    public void hitungTotal(){
+    public float hitungTotal(){
         for (Item item : daftarItem) {
-            this.totalHarga += item.hitungSubTotal();
+            this.totalHarga += item.getSubTotal();
         }
+        return totalHarga;
     }
 
-    public void addItem(Produk produk, int quantity){
-        daftarItem.add(new Item(produk, quantity));
+    public void addItem(String nama, int quantity){
+        for (Produk produk : selected.getDaftarProduk()) {
+            if (produk.getNamaProduk().equals(nama)) {
+                daftarItem.add(new Item(produk, quantity));
+                return;
+            }
+        }
+        System.out.println("produk " + nama + " tidak ada");
+        System.out.println();
+    }
+
+    public void addToko(Toko toko){
+        daftarToko.add(toko);
+    }
+
+
+    public void pilihToko(String nama){
+        for (Toko toko : daftarToko) {
+            if (toko.getNamaToko() == nama) {
+                selected = toko;
+                return;
+            }
+        }
     }
 
     public void cetakInvoice(){
-        
-    }
-
-    public Toko cariToko(int id){
-        for (Toko toko : daftarToko) {
-            if(toko.getIdToko() == id){
-                return toko;
-            }
+        System.out.println("Kantin FILKOM\nToko: " + selected.getNamaToko());
+        System.out.println("--------------------------------");
+        for (Item item : daftarItem) {
+            System.out.println(item.getProduk().getNamaProduk() + "\t" + item.getQuantity() + "\t" + item.getProduk().getHarga());
+            System.out.println(item.getSubTotal());
         }
-        return null;
+        System.out.println("--------------------------------");
+        System.out.println("Subtotal:\t\t" + hitungTotal());
     }
 }

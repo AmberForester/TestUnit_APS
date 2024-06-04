@@ -24,15 +24,23 @@ public class Toko {
 
     public void cetakDaftarProduk() {
         for (Produk produk : daftarProduk) {
-            System.out.printf("%s: %f",produk.getNamaProduk(), produk.getHarga());
+            System.out.printf("%s: %f\n",produk.getNamaProduk(), produk.getHarga());
         }
     }
 
-    public void addProduk(int id, String nama, double harga){
+    public void addProduk(int id, String nama, float harga){
         daftarProduk.add(new Produk(id, nama, harga));
     }
 
     public void addItem(Produk produk, int quantity){
         // daftarItem.add(new Item(produk, quantity));
+    }
+
+    public int getProdukId(){
+        return daftarProduk.size();
+    }
+
+    public List<Produk> getDaftarProduk(){
+        return daftarProduk;
     }
 }
