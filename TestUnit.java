@@ -13,12 +13,14 @@ public class TestUnit {
         
         toko2.addProduk(toko2.getProdukId(), "Es teh panas", 4000);
         toko2.addProduk(toko2.getProdukId(), "Es Kampul", 5000);
-        
+
         pesanan.addToko(toko1);
         pesanan.addToko(toko2);
 
+        // use case pesanan
         pesanan.pilihToko("toko ChiefHadi");
-
+        
+        // loop
         pesanan.addItem("Ayam Goreng", 2);
         pesanan.addItem("Nasi Goreng", 3);
 

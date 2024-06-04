@@ -42,12 +42,12 @@ public class Pesanan {
 
     public void cetakInvoice(){
         System.out.println("Kantin FILKOM\nToko: " + selected.getNamaToko());
-        System.out.println("--------------------------------");
+        System.out.println("Nama Produk" + "   Jumlah \t" + "Harga\t\t" + "Subtotal");
+        System.out.println("---------------------------------------------------");
         for (Item item : daftarItem) {
-            System.out.println(item.getProduk().getNamaProduk() + "\t" + item.getQuantity() + "\t" + item.getProduk().getHarga());
-            System.out.println(item.getSubTotal());
+            System.out.println(item.getProduk().getNamaProduk() + "\t" + item.getQuantity() + "\t" + item.getProduk().getHarga() + "\t\t" + item.getSubTotal());
         }
-        System.out.println("--------------------------------");
-        System.out.println("Subtotal:\t\t" + hitungTotal());
+        System.out.println("---------------------------------------------------");
+        System.out.println("Total:\t\t\t\t\t" + hitungTotal());
     }
 }
