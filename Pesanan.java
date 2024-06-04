@@ -30,7 +30,6 @@ public class Pesanan {
         daftarToko.add(toko);
     }
 
-
     public void pilihToko(String nama){
         for (Toko toko : daftarToko) {
             if (toko.getNamaToko() == nama) {

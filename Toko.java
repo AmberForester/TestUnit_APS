@@ -21,16 +21,13 @@ public class Toko {
     public String getNamaToko() {
         return namaToko;
     }
+
+    public List<Produk> getDaftarProduk(){
+        return daftarProduk;
+    }
     
     public void addProduk(int id, String nama, float harga){
         daftarProduk.add(new Produk(id, nama, harga));
     }
 
-    public int getProdukId(){
-        return daftarProduk.size();
-    }
-
-    public List<Produk> getDaftarProduk(){
-        return daftarProduk;
-    }
 }

@@ -7,11 +7,11 @@ public class TestUnit {
         Toko toko2 = new Toko(2, "Cabang toko ChiefHadi", "09.00");
         
         // daftar produk
-        toko1.addProduk(toko1.getProdukId(), "Nasi Goreng", 15000);
-        toko1.addProduk(toko1.getProdukId(), "Ayam Goreng", 14000);
+        toko1.addProduk(1, "Nasi Goreng", 15000);
+        toko1.addProduk(2, "Ayam Goreng", 14000);
         
-        toko2.addProduk(toko2.getProdukId(), "Es teh panas", 4000);
-        toko2.addProduk(toko2.getProdukId(), "Es Kampul", 5000);
+        toko2.addProduk(3, "Es teh panas", 4000);
+        toko2.addProduk(4, "Es Kampul", 5000);
 
         // pesanan
         Pesanan pesanan = new Pesanan();
