@@ -23,14 +23,14 @@ public class Pesanan {
         daftarItem.add(item);
     }
 
-    public void checkOut(String toko){
+    public void checkOut(){
         statusPesanan = "Menunggu Konfirmasi";
         hitungTotal();
-        cetakInvoice(toko);
+        cetakInvoice();
     }
 
-    public void cetakInvoice(String toko){
-        System.out.println("Kantin FILKOM\nToko: " + toko);
+    public void cetakInvoice(){
+        System.out.println("Kantin FILKOM\nToko: ChiefHadi");
         System.out.println("--------------------------------");
         for (Item item : daftarItem) {
             System.out.println(item.getProduk().getNamaProduk() + "\t" + item.getQuantity() + "\t" + item.getProduk().getHarga());
